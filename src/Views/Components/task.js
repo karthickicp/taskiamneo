@@ -4,20 +4,9 @@ import TaskList from "./taskList";
 
 const InnerQuoteList = (props) => {
   return props.candidates.map((candidate, index) => (
-    <Draggable
-      key={candidate.id}
-      draggableId={candidate.id}
-      index={index}
-      shouldRespectForceTouch={false}
-    >
+    <Draggable key={candidate.id} draggableId={candidate.id} index={index} shouldRespectForceTouch={false}>
       {(dragProvided, dragSnapshot) => (
-        <TaskList
-          key={candidate.id}
-          candidate={candidate}
-          isdragging={dragSnapshot.isdragging}
-          isGroupedOver={Boolean(dragSnapshot.combineTargetFor)}
-          provided={dragProvided}
-        />
+        <TaskList key={candidate.id} candidate={candidate} isdragging={dragSnapshot.isdragging} isGroupedOver={Boolean(dragSnapshot.combineTargetFor)} provided={dragProvided} />
       )}
     </Draggable>
   ));
@@ -36,25 +25,10 @@ const InnerList = (props) => {
 };
 
 const Task = (props) => {
-  const {
-    ignoreContainerClipping,
-    isdropdisabled,
-    isCombineEnabled,
-    listId,
-    listType,
-    style,
-    candidates,
-    title,
-  } = props;
+  const { ignoreContainerClipping, isdropdisabled, isCombineEnabled, listId, listType, style, candidates, title, } = props;
 
   return (
-    <Droppable
-      droppableId={listId}
-      type={listType}
-      ignoreContainerClipping={ignoreContainerClipping}
-      isdropdisabled={isdropdisabled}
-      isCombineEnabled={isCombineEnabled}
-    >
+    <Droppable droppableId={listId} type={listType} ignoreContainerClipping={ignoreContainerClipping} isdropdisabled={isdropdisabled} isCombineEnabled={isCombineEnabled}>
       {(dropProvided, dropSnapshot) => (
         <div
           className="task-wrapper"

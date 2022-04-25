@@ -1,6 +1,5 @@
 import { Droppable } from "react-beautiful-dnd";
 import Column from "./column";
-
 const Card = (props) => {
   const columns = props.columns;
   const ordered = props.ordered;

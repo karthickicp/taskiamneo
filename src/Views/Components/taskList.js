@@ -30,15 +30,7 @@ const TaskList = (props) => {
         </div>
       </div>
       <div className="bottom-body">
-        <StarRatings
-          rating={rating}
-          starRatedColor="yellow"
-          changeRating={(val) => changeRating(val)}
-          numberOfStars={5}
-          starDimension="22px"
-          starSpacing="2px"
-          name="rating"
-        />
+        <StarRatings rating={rating} starRatedColor="yellow" changeRating={(val) => changeRating(val)} numberOfStars={5} starDimension="22px" starSpacing="2px" name="rating" />
       </div>
     </div>
   );
